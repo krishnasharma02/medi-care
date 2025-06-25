@@ -1,0 +1,568 @@
+*{
+    padding: 0%;
+    margin: 0%;
+}
+.navbar {
+    position: fixed; /* Fixes the navbar at the top */
+    top: 0; /* Ensures the navbar stays at the top */
+    left: 0; /* Stretches the navbar to the full width */
+    width: 100%; /* Full width of the screen */
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: #343a40; /* Dark background */
+    padding: 1rem; /* Adds padding to navbar for a more spacious look */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    z-index: 1000; /* Ensures navbar is on top of other content */
+}
+
+/* Adds spacing to body content below the fixed navbar */
+body {
+    padding-top: 3rem; /* Adjust this value based on the height of your navbar */
+}
+
+/* Other existing styles remain the same */
+.navbar .logo img.myimg {
+    height: 50px;
+    width: auto;
+    margin-right: 1rem; /* Adds spacing to the right of the logo */
+}
+
+.navbar-brand {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.navbar-nav .nav-link {
+    color: #ffffff;
+    font-size: 1rem;
+    margin-right: 1rem;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #00cc66;
+}
+
+.navbar-nav .nav-link.active {
+    color: #00cc66;
+}
+
+.form-control {
+    border: none;
+    border-radius: 20px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    transition: box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 10px rgba(0, 204, 102, 0.5);
+    outline: none;
+}
+
+.btn-outline-success {
+    color: #ffffff;
+    border-color: #00cc66;
+    border-radius: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-outline-success:hover {
+    background-color: #00cc66;
+    color: #ffffff;
+    border-color: #00cc66;
+}
+
+@media (max-width: 992px) {
+    .navbar-nav .nav-link {
+        margin-right: 0;
+        font-size: 1.2rem;
+    }
+    .form-control, .btn-outline-success {
+        margin-top: 0.5rem;
+    }
+}
+
+
+
+/* .bg{
+    background-color: aqua;
+} */
+
+
+/* Background styles */
+.bg {
+
+    background: url('boy.avif') no-repeat center center fixed;
+    background-size: cover; /* Ensures the image covers the screen */
+    background-position: center center; /* Centers the image */
+    background-attachment: fixed; /* Keeps the background fixed during scrolling */
+    height: 100vh; /* Ensures the background covers the entire viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Heading Style */
+h1.text-green {
+    color: #370fa7; /* Fallback color */
+    font-size: 42px; /* Increased font size for emphasis */
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    text-transform: uppercase; /* Bold look with uppercase text */
+    letter-spacing: 2px;
+    background: linear-gradient(45deg, #370fa7, #57e957);
+    -webkit-background-clip: text;
+    color: transparent; /* Allows gradient to be visible */
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2), 0px 0px 15px rgba(87, 233, 87, 0.5);
+    transition: all 0.3s ease; /* Smooth transitions */
+}
+
+h1.text-green:hover {
+    text-shadow: 3px 3px 20px rgba(55, 15, 167, 0.8), 0 0 30px rgba(87, 233, 87, 0.7);
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+
+/* Container Styling */
+.container {
+    background: rgba(2, 2, 2, 0.7);
+    color: white;
+    border-radius: 15px;
+    padding: 40px;
+    width: 80%;
+    max-width: 900px;
+    margin: auto;
+}
+
+/* Form Styling */
+.form-group label {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.form-control {
+    background-color: #2a2a2a;
+    color: white;
+    border: 1px solid #444;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.form-control::placeholder {
+    color: #999;
+}
+
+button {
+    padding: 14px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+button:focus {
+    outline: none;
+}
+
+#startSpeechRecognition {
+    background: #ff4081;
+    border: 1px solid white;
+    margin-top: 10px;
+    color: white;
+}
+
+#startSpeechRecognition:hover {
+    background: #f50057;
+    cursor: pointer;
+}
+
+/* Modal Styling */
+.modal-content {
+    background-color: #020606;
+    color: white;
+    border-radius: 15px;
+}
+
+.modal-header {
+    background-color: #222;
+    color: white;
+}
+
+.modal-body {
+    background-color: #333;
+}
+
+.modal-body ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.modal-body li {
+    margin: 5px 0;
+}
+
+/* Result Container */
+.result-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 10px;
+    width: 100%;  /* Ensure it doesn't overflow horizontally */
+    padding: 0 15px;  /* Add padding to prevent content from touching the edges */
+    flex-wrap: wrap;  /* Allow items to wrap when space is insufficient */
+}
+
+/* Adjustments for mobile screens */
+@media (max-width: 768px) {
+    .container {
+ 
+        width: 90%;
+        padding: 20px;
+    }
+
+    .toggle-button {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    h1.text-green {
+        font-size: 28px;
+    }
+
+    /* Adjust the result-container layout on smaller screens */
+    .result-container {
+        width: 100%; /* Take up full width */
+        padding: 0 10px; /* Ensure it's not too tight */
+        flex-direction: wrap; /* Items remain in a row but can wrap */
+        flex-wrap: wrap; /* Allow items to wrap */
+        gap: 1px; /* Increase gap between items for better readability */
+    }
+}
+
+.toggle-button {
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.toggle-button:hover {
+    opacity: 0.8;
+}
+
+/* Button Color Scheme */
+.toggle-button:nth-child(1) {
+    background-color: #F39334;
+}
+
+.toggle-button:nth-child(2) {
+    background-color: #268AF3;
+}
+
+.toggle-button:nth-child(3) {
+    background-color: #F371F9;
+}
+
+.toggle-button:nth-child(4) {
+    background-color: #F8576F;
+}
+
+.toggle-button:nth-child(5) {
+    background-color: #99F741;
+}
+
+.toggle-button:nth-child(6) {
+    background-color: #E5E23D;
+}
+
+/* Form Submit Button */
+button[type="submit"] {
+    background-color: #e74c3c;
+    border: 1px solid #e74c3c;
+    color: white;
+    width: 100%;
+    font-size: 18px;
+}
+
+button[type="submit"]:hover {
+    background-color: #c0392b;
+    cursor: pointer;
+}
+
+/* Additional Styling for "hiii" text */
+#sum {
+    font-size: 36px; /* Increase font size for more emphasis */
+    color: #ffffff; /* Change text color to white for better contrast */
+    text-align: center;
+    margin-top: 50px;
+    font-family: 'Arial', sans-serif; /* Choose a clean, modern font */
+    font-weight: bold; /* Make the text bold for better impact */
+    text-transform: uppercase; /* Capitalize the text for a more bold look */
+    letter-spacing: 2px; /* Add spacing between letters for a cleaner look */
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2), 0 0 25px rgba(0, 255, 0, 0.7); /* Add shadow for depth */
+    background: linear-gradient(45deg, #0d2392, #4e5d77); /* Add a gradient background */
+    -webkit-background-clip: text; /* Clip background to text */
+    color: transparent; /* Make text transparent to show the gradient */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+#sum:hover {
+    text-shadow: 3px 3px 15px rgba(0, 255, 0, 0.8), 0 0 35px rgba(0, 255, 0, 0.6); /* Enhanced shadow on hover */
+    transform: scale(1.1); /* Slight zoom-in effect on hover */
+    color: #ffffff; /* Ensure text is white when hovered */
+}
+
+
+/* Adjustments for mobile screens */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .toggle-button {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    h1.text-green {
+        font-size: 28px;
+    }
+}
+
+
+/* Center the entire div on the screen */
+.our_feed {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 3px 3px 20px rgba(55, 15, 167, 0.8), 0 0 30px rgba(87, 233, 87, 0.7);
+    transform: scale(1.05);
+    text-align: center; 
+}
+
+
+
+
+
+.testimonial-slider {
+    width: 100%; /* Use full width of the parent container */
+    max-width: 950px; /* Max width */
+    height: auto;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+}
+
+.slide-wrapper {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slide {
+    flex: 0 0 50%; /* Show 2 slides at a time (50% of the container width) */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+button {
+    cursor: pointer;
+    padding: 10px 20px;
+    margin-top: 10px;
+    margin-left: 1%;
+}
+
+.review-box {
+    background-color: #efeae1;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.review-author {
+    font-weight: bold;
+    margin-top: 1%;
+}
+
+.review-content {
+    font-size: 70%;
+    line-height: 1.6;
+}
+
+.review-image {
+    width: 30%;
+    height: auto;
+    border-radius: 50%;
+    margin-left: 35%;
+    margin-right: 50%;
+}
+
+.review-quote {
+    background-color: #d5cdbb; /* Background color for the quote box */
+    padding: 10px;
+    border-radius: 5px;
+    font-style: initial;
+    margin-bottom: 10px;
+    font-size: small;
+}
+
+.review-author {
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.button-container {
+    margin-left: 40%; /* Adjust the left margin as needed */
+    color: rgba(148, 45, 45, 0.562);
+}
+
+@media (max-width: 768px) {
+    .slide {
+        flex: 0 0 100%; /* On smaller screens, show one slide at a time */
+    }
+}
+
+.ch_c{
+    background-color: #8e9ea1;
+}
+
+
+
+
+
+
+/* Footer Styling */
+.large-footer {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 40px 0;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    flex-wrap: wrap;
+    gap: 20px; /* Adding gap between columns */
+  }
+  
+  .contact-info,
+  .professional-statement {
+    flex: 1;
+    margin: 20px;
+    padding: 20px;
+    background-color: #34495e;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 45%;
+    box-sizing: border-box; /* Ensures padding doesn't cause overflow */
+  }
+  
+  .contact-info h2,
+  .professional-statement h2 {
+    color: #3498db;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+  }
+  
+  .contact-info p,
+  .professional-statement p {
+    color: #ecf0f1;
+    line-height: 1.6;
+    font-size: 1rem;
+  }
+  
+  .contact-info a,
+  .professional-statement a {
+    color: #3498db;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .contact-info a:hover,
+  .professional-statement a:hover {
+    color: #ecf0f1;
+    text-decoration: underline;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1200px) {
+    .footer-content {
+      justify-content: center; /* Center content on larger tablets */
+    }
+  
+    .contact-info,
+    .professional-statement {
+      max-width: 48%; /* Adjust width for medium screens */
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .footer-content {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .contact-info,
+    .professional-statement {
+      max-width: 90%; /* Ensure content doesn't stretch too wide */
+      margin: 15px 0;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .contact-info h2,
+    .professional-statement h2 {
+      font-size: 1.3rem; /* Adjust heading size for smaller screens */
+    }
+  
+    .contact-info p,
+    .professional-statement p {
+      font-size: 0.9rem; /* Adjust text size for readability */
+    }
+  
+    .footer-content {
+      padding: 10px;
+    }
+  
+    .contact-info,
+    .professional-statement {
+      max-width: 90%; /* Max width for smaller screens */
+      padding: 15px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .contact-info h2,
+    .professional-statement h2 {
+      font-size: 1.1rem; /* Smaller heading size for very small screens */
+    }
+  
+    .contact-info p,
+    .professional-statement p {
+      font-size: 0.8rem; /* Smaller text size */
+    }
+  
+    .footer-content {
+      padding: 10px 5px;
+    }
+  
+    .contact-info,
+    .professional-statement {
+      max-width: 95%; /* Max width for mobile screens */
+      padding: 12px;
+      margin: 10px 0;
+    }
+  }
